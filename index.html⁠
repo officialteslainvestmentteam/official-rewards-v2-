@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Announcement</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .wrapper {
+            max-width: 440px;
+            width: 100%;
+            background-color: #121212;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .registry-info {
+            color: #888888;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #1a8cd8;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .card {
+            background-color: #1c1c1e;
+            border-left: 4px solid #1a8cd8;
+            border-radius: 4px 12px 12px 4px;
+            padding: 22px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .card p {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #e1e1e1;
+            margin-bottom: 16px;
+        }
+
+        .card p strong {
+            color: #ffffff;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #e1e1e1;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .card li::before {
+            content: "•";
+            color: #1a8cd8;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            top: -2px;
+        }
+
+        .showcase-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-text {
+            font-size: 14.5px;
+            line-height: 1.5;
+            color: #bbbbbb;
+            margin-bottom: 25px;
+            padding: 0 5px;
+        }
+
+        /* Interactive Dynamic Button States */
+        .action-btn {
+            display: inline-block;
+            width: 100%;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #2ea44f; /* Initial Green Base */
+        }
+        
+        /* The Moving Green Progress Animation Background Track */
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #1f7a34; /* Darker green background filler */
+            z-index: 1;
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Final Blue State */
+        .btn-blue {
+            background-color: #0084d6 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>CONGRATULATIONS Lurleen Tate-Smith ! 🎈</h1>
+        <div class="registry-info">
+            1(412) 969-0395 &nbsp;|&nbsp; lurleentate@gmail.com
+        </div>
+        
+        <div class="section-title">UPDATED ANNOUNCEMENT FROM THE LEADERSHIP TEAM</div>
+
+        <div class="card">
+            <p><strong>This is the Tesla Management Team, in coordination with the leadership families at SpaceX and xAI.</strong></p>
+            <p>We are thrilled to personally inform you that your name has been randomly selected to be part of our official giveaway promotion! You have officially won a grand prize of <strong>$50,000.00</strong> and a brand-new, latest-model Tesla.</p>
+            <p>This recognition comes with the full support of our executive families:</p>
+            <ul>
+                <li><strong>From Tesla:</strong> Myself, CFO Vaibhav Taneja, and our engineering leads Lars Moravy and Ashok Elluswamy.</li>
+                <li><strong>From SpaceX:</strong> President & COO Gwynne Shotwell and the entire Starlink and launch teams.</li>
+                <li><strong>From xAI:</strong> Our research lead Igor Babuschkin and the Grok development team.</li>
+            </ul>
+            <p>Your presence and engagement in our community haven’t gone unnoticed. Keep up the incredible work; it’s people like you who help drive the future forward.</p>
+            <p><strong>Kindly click on the button claim to claim your package and winning.</strong></p>
+        </div>
+
+        <!-- Direct Premium Global Asset Link for the Red Tesla Model -->
+        <img class="showcase-image" src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=500&q=80" alt="Red Tesla Vehicle Presentation">
+
+        <p class="footer-text">The Tesla Management Team, SpaceX, and xAI families congratulate you on your $50,000.00 and new Tesla win!</p>
+
+        <!-- Button Interface -->
+        <button id="stateButton" class="action-btn">
+            <div id="pBar" class="progress-bar"></div>
+            <span id="btnLabel" class="btn-text">Claim Package</span>
+        </button>
+    </div>
+
+    <script>
+        const button = document.getElementById('stateButton');
+        const progressBar = document.getElementById('pBar');
+        const btnLabel = document.getElementById('btnLabel');
+        let currentState = 'initial';
+
+        button.addEventListener('click', function() {
+            if (currentState === 'initial') {
+                currentState = 'loading';
+                let progress = 0;
+                
+                // Slow, smooth incremental progress engine (Moves step-by-step)
+                const interval = setInterval(() => {
+                    progress += 1; // Creep forward slowly by 1% intervals
+                    if (progress <= 100) {
+                        progressBar.style.width = progress + '%';
+                        btnLabel.innerText = `Claiming Package... ${progress}%`;
+                    } else {
+                        clearInterval(interval);
+                        currentState = 'final';
+                        progressBar.style.width = '0%'; // Clear the filling track layer
+                        button.classList.add('btn-blue'); // Swap visual skin color to blue instantly
+                        btnLabel.innerText = 'Get Packages 📦';
+                    }
+                }, 40); // 40ms interval timing creates a realistic, slow visual crawl
+                
+            } else if (currentState === 'final') {
+                // Instantly opens your WhatsApp link on the second tap
+                window.location.href = "https://wa.me/17793746562";
+            }
+        });
+    </script>
+
+</body>
+</html>
